@@ -76,6 +76,17 @@ def rest():
 btn_sleep.clicked.connect(rest)
 
 def to_menu():
+    if count_ask == 0:
+        c = 0
+    else:
+        c = (count_right/count_ask) * 100
+
+    text = f'Всього відповідей:{count_ask}\n' \
+        f'Правильних відповідей:{count_right}\n' \
+        f'Успішність:{round(c, 2)}%'
+    
+    inf_lbl.setText(text)
+
     window.hide()
     main_window.show()
 
